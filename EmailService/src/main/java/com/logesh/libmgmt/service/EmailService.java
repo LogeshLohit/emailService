@@ -21,8 +21,12 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import com.logesh.libmgmt.model.UserBook;
+import com.logesh.libmgmt.model.BookByUser;
 
+/**
+ * @author Logesh
+ *
+ */
 @Service
 public class EmailService {
 
@@ -38,7 +42,7 @@ public class EmailService {
 	@Value("${email.body}")
 	public String emailContent;
 
-	public void sendmail(UserBook userData) throws AddressException, MessagingException, IOException {
+	public void sendmail(BookByUser userData) throws AddressException, MessagingException, IOException {
 		System.out.println("Started method....");
 
 		String emailBody = MessageFormat.format(emailContent, StringUtils.capitalize(userData.getUserName()),

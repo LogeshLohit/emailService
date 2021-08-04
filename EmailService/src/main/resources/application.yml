@@ -8,7 +8,7 @@ server:
 
 email:
   subject: Book Return Date - Alert Email
-  body: Hello {0}!,<br>Return day for the book <b>{1}</b> you lended is nearning, returnDate - <b>{2}</b>, only <b>{3}</b> day(s) remaining! <br>Please return it on time!<br><br><i>Regards,</i><br><b>Lib Mgmt Team</b>
+  body: Hello {0}!,<br><br>Return day for the book <b>{1}</b>, that you are currently availing is nearing, return date is <b>{2}</b>, only <b>{3}</b> day(s) remaining! <br>Please return it on time!<br><br><i>Regards,</i><br><b>Lib Mgmt Team</b>
   
   noOfDaysToValidate: 3
   user:
@@ -16,5 +16,38 @@ email:
       emailId: logesh.jeppiaar@gmail.com
       emailPassword: <PASSWORD>
       
-     
-     
+#MYSQL - DB Configuration starts     
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/bookshop
+    username: root
+    password: <PASSWORD>
+#MYSQL - DB Configuration ends
+
+
+
+#Alert email configuration starts    
+alertEmail:
+#Testing in local - Ignorable if using DB - starts
+  testing:
+    returnDate1: 2021-08-06
+    returnDate2: 2021-08-07
+    
+    emailId1: mukesh.ssq@gmail.com
+    emailId2: logesh.ssg@gmail.com 
+#Testing in local - Ignorable if using DB - ends
+
+
+#timestmap format of returnDate in DB
+  returnDate:
+    timeStampFormat: yyyy-MM-dd
+    
+#if this switch is false, it will pick data from local
+  getFromDb: false   
+
+#MySql query to access and fetch results - starts
+  mysql:
+    query: select user_name,book_name,email_id,return_date from TABLE where ID = 'ABC';
+
+#MySql query to access and fetch results - ends
+#Alert email configuration ends

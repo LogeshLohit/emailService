@@ -11,7 +11,7 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserBook {
+public class BookByUser {
 
 	private String userName;
 	private String bookName;
@@ -20,14 +20,14 @@ public class UserBook {
 
 	private String daysLeftToReturn;
 
-	public UserBook(String userName, String userEmailId, String returnDate) {
+	public BookByUser(String userName, String userEmailId, String returnDate) {
 		super();
 		this.userName = userName;
 		this.userEmailId = userEmailId;
 		this.returnDate = returnDate;
 	}
 
-	public UserBook(String userName, String bookName, String userEmailId, String returnDate) {
+	public BookByUser(String userName, String bookName, String userEmailId, String returnDate) {
 		super();
 		this.userName = userName;
 		this.bookName = bookName;
