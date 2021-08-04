@@ -2,3 +2,19 @@ server:
   port: 8092
   servlet:
     context-path: /EmailService
+
+    
+#EMAIL DATA
+
+email:
+  subject: Book Return Date - Alert Email
+  body: Hello {0}!,<br>Return day for the book <b>{1}</b> you lended is nearning, returnDate - <b>{2}</b>, only <b>{3}</b> day(s) remaining! <br>Please return it on time!<br><br><i>Regards,</i><br><b>Lib Mgmt Team</b>
+  
+  noOfDaysToValidate: 3
+  user:
+    fromAddress:
+      emailId: logesh.jeppiaar@gmail.com
+      emailPassword: <PASSWORD>
+      
+     
+     
